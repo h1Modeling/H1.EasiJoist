@@ -1,0 +1,85 @@
+Neos:
+  ContentRepository:
+    contentDimensions:
+      'language':
+        default: 'de'
+        defaultPreset: 'de'
+        label: 'Sprache'
+        icon: 'icon-language'
+        presets:
+          'en':
+            label: 'Englisch'
+            values: ['en']
+            uriSegment: 'en'
+          'de':
+            label: 'Deutsch'
+            values: ['de']
+            uriSegment: ''
+          'fr':
+            label: 'Französisch'
+            values: ['fr']
+            uriSegment: 'fr'
+  Neos:
+    userInterface:
+      backendLoginForm:
+        backgroundImage: 'resource://H1.Wolf/Public/Images/Osterhofen.jpg'
+      navigateComponent:
+        nodeTree:
+          loadingDepth: 1
+        structureTree:
+          loadingDepth: 2
+      translation:
+        autoInclude:
+          H1.EasiJoist:
+            - 'NodeTypes/*'
+    nodeTypes:
+      groups:
+        form:
+          label: 'Form elements'
+        video:
+          position: 15
+          label: 'Video'
+          icon: 'play-circle'
+        slider:
+          position: 20
+          label: 'Slider'
+          icon: 'map-o'
+        special:
+          position: 50
+          label: 'Sonderelemente'
+          collapsed: true
+          icon: 'icon-fort-awesome'
+        layout:
+          position: 40
+          label: 'Layout'
+          collapsed: false
+          icon: 'icon-hand-down'
+        footer:
+          position: 100
+          label: 'Footer elements'
+          collapsed: true
+          icon: 'icon-hand-down'
+        header:
+          position: 90
+          label: 'Header elements'
+          collapsed: true
+          icon: 'icon-hand-up'
+        references:
+          position: 80
+          label: 'Referenzen'
+          icon: 'star-o'
+        news:
+          position: 45
+          collapsed: true
+          label: 'News / Messen'
+          icon: 'newspaper-o'
+  Media:
+    thumbnailPresets:
+      'presetLg':
+        maximumWidth: 1920
+      'presetMd':
+        maximumWidth: 1200
+      'presetSm':
+        maximumWidth: 720
+      'presetXs':
+        maximumWidth: 450

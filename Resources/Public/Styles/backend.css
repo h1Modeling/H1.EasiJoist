@@ -1,0 +1,9 @@
+
+.swiperTheaser-container .swiper-wrapper .swiper-slide {
+    width: 25%;
+    margin: 10px;
+}
+
+.theaserButton {
+  display: none;
+}

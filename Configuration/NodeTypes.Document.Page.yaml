@@ -1,0 +1,167 @@
+---
+'H1.EasiJoist:Page':
+  superTypes:
+    'Neos.Neos:Document': true
+    'H1.EasiJoist:ChildNodes': true
+    'H1.EasiJoist:PageConstraints': true
+  ui:
+    icon: 'icon-file'
+    label: 'Seite'
+    position: 10
+
+# If you need more than just the "main" content area you can uncomment the snippet below. It will add a "sidebar" area
+# to your pages. You can add as many areas as you like, still only those that are rendered in your Fusion-code and
+# Template are visible on your page.
+
+#    'sidebar':
+#      type: 'Neos.Neos:ContentCollection'
+
+'H1.EasiJoist:HomePage':
+  superTypes:
+    'Neos.Neos:Document': true
+    'H1.EasiJoist:ChildNodes': true
+    'H1.NodeTypes.WolfSystem:GroupGeneralMixin': true
+    'H1.EasiJoist:PageConstraints': true
+  ui:
+    label: 'i18n'
+    icon: 'home'
+  childNodes:
+    header:
+      type: 'H1.NodeTypes.WolfSystem:Bereich'
+      constraints:
+        nodeTypes:
+          '*': false
+          'H1.NodeTypes.WolfSystem:HeaderLogo': true
+          'H1.NodeTypes.WolfSystem:HeaderContact': true
+      position: 'before main'
+    footer:
+      type: 'H1.NodeTypes.WolfSystem:Bereich'
+      constraints:
+        nodeTypes:
+          '*': false
+          'H1.NodeTypes.WolfSystem:SocialMediaButton': true
+          'H1.NodeTypes.WolfSystem:CookieMessage': true
+          'H1.NodeTypes.WolfSystem:HeaderLogo': true
+  properties:
+    copyright:
+      type: string
+      ui:
+        label: 'i18n'
+        reloadIfChanged: true
+        inspector:
+          group: 'general'
+          position: 20
+    contact:
+      type: string
+      ui:
+        label: 'i18n'
+        reloadIfChanged: true
+        inspector:
+          group: 'general'
+          position: 40
+    collectionPrefix:
+      type: string
+      ui:
+        label: 'i18n'
+        inspector:
+          group: 'general'
+          position: 100
+
+
+'H1.EasiJoist:FooterPage':
+  superTypes:
+    'H1.EasiJoist:Page': true
+  ui:
+    label: 'i18n'
+    icon: 'info-circle'
+    position: 100
+  constraints:
+    nodeTypes:
+      '*': false
+
+
+
+'H1.EasiJoist:CustomerPage':
+  superTypes:
+    'H1.EasiJoist:Page': true
+  ui:
+    label: 'i18n'
+    icon: 'users'
+    position: 50
+  constraints:
+    nodeTypes:
+      '*': false
+
+
+'H1.EasiJoist:PageConstraints':
+  abstract: true
+  constraints:
+    nodeTypes:
+      '*': false
+      'Neos.NodeTypes:Page': false
+      'Neos.Neos:Shortcut': false
+      'H1.EasiJoist:HomePage': false
+      'H1.EasiJoist:Page': true
+      'H1.EasiJoist:FooterPage': true
+      'H1.EasiJoist:CustomerPage': true
+      'H1.Wolf:Page': false      
+
+
+'H1.EasiJoist:ChildNodes':
+  abstract: true
+  childNodes:
+    main:
+      type: 'H1.NodeTypes.WolfSystem:Bereich'
+      constraints:
+        nodeTypes:
+          '*': true
+          'Neos.Demo:Carousel': false
+          'Neos.Demo:Registration': false
+          'Neos.Demo:Flickr': false
+          'H1.NodeTypes.WolfSystem:MesseContainer': true
+          'Neos.NodeTypes:Menu': false
+          'H1.NodeTypes.WolfSystem:HeaderLogo': false
+          'H1.NodeTypes.WolfSystem:HeaderContact': false
+          'H1.NodeTypes.WolfSystem:SocialMediaButton': false
+          'Flowpack.Neos.FrontendLogin:LoginForm': false
+          'Neos.Neos:PluginView': false
+          'Neos.NodeTypes:TwoColumn': false
+          'Neos.NodeTypes:ThreeColumn': false
+          'Neos.NodeTypes:FourColumn': false
+          'H1.NodeTypes.WolfSystem:SliderItem': false
+          'H1.NodeTypes.WolfSystem:ThemenSliderItem': false
+          'Neos.NodeTypes:Headline': false
+          'Neos.NodeTypes:Form': false
+          'Neos.NodeTypes:TextWithImage': false
+          'Neos.NodeTypes:Column': false
+          'H1.NodeTypes.WolfSystem:KachelText': false
+          'H1.NodeTypes.WolfSystem:OverlayImage': false
+          'H1.NodeTypes.WolfSystem:TheaserBox': false
+          'Neos.NodeTypes:Image': false
+          'H1.NodeTypes.WolfSystem:CookieMessage': false
+          'H1.NodeTypes.WolfSystem:Form': false
+          'H1.NodeTypes.WolfSystem:FormTextField': false
+          'H1.NodeTypes.WolfSystem:FormSelect': false
+          'H1.NodeTypes.WolfSystem:FormSelectOption': false
+          'H1.NodeTypes.WolfSystem:FormTextArea': false
+          'H1.NodeTypes.WolfSystem:FormCheckBox': false
+          'H1.NodeTypes.WolfSystem:FormDivider': false
+          'H1.NodeTypes.WolfSystem:ThemenSlider': false
+          'H1.NodeTypes.WolfSystem:ReferenceFilterContainer': false
+          'H1.NodeTypes.WolfSystem:Reference': false
+          'H1.NodeTypes.WolfSystem:BuildingTypeSelection': false
+          'H1.NodeTypes.WolfSystem:RegionSelection': false
+          'H1.NodeTypes.WolfSystem:ReferenceSliderImage': false
+          'H1.NodeTypes.WolfSystem:ReferenceSliderImages': false
+          'H1.NodeTypes.WolfSystem:Messe': false
+          'H1.NodeTypes.WolfSystem:Image': false
+          'Neos.NodeTypes:Text': false
+          'H1.NodeTypes.WolfSystem:LinkText': false
+          'H1.NodeTypes.WolfSystem:YouTube': false
+          'H1.NodeTypes.WolfSystem:Video': false
+          'Neos.NodeTypes:AssetList': false
+          'H1.NodeTypes.WolfSystem:Counter': false
+          'H1.NodeTypes.WolfSystem:ThemenContentSliderItem': false
+          'H1.NodeTypes.WolfSystem:AssetList': false
+          'H1.NodeTypes.WolfSystem:Asset': false
+          'H1.NodeTypes.WolfSystem:Fachberater': false

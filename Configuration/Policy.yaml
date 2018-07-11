@@ -1,0 +1,29 @@
+privilegeTargets:
+  
+  'Neos\Neos\Security\Authorization\Privilege\NodeTreePrivilege':
+    'H1.EasiJoist:ViewTree':
+      matcher: 'isDescendantNodeOf("94c982ea-0cc1-4e23-b275-52a99ad9d799")'
+
+  'Neos\Media\Security\Authorization\Privilege\ReadAssetCollectionPrivilege':
+    'H1.EasiJoist:EasiJoistAssets':
+      matcher: 'isTitled("Easi-Joist")'
+
+roles:
+  'Neos.Neos:Administrator':
+    privileges:
+      -
+        privilegeTarget: 'H1.EasiJoist:ViewTree'
+        permission: GRANT
+      -
+        privilegeTarget: 'H1.EasiJoist:EasiJoistAssets'
+        permission: GRANT
+
+  'H1.EasiJoist:EasiJoistEditor':
+    parentRoles: ['Neos.Neos:Editor']
+    privileges:
+      -
+        privilegeTarget: 'H1.EasiJoist:ViewTree'
+        permission: GRANT
+      -
+        privilegeTarget: 'H1.EasiJoist:EasiJoistAssets'
+        permission: GRANT

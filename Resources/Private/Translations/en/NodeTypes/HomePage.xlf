@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="H1.EasiJoist" source-language="de" datatype="plaintext" target-language="en">
+        <body>
+			<trans-unit id="ui.label" xml:space="preserve">
+				<source>Startseite</source>
+				<target xml:lang="en">Main Page</target>
+			</trans-unit>
+			<trans-unit id="properties.copyright" xml:space="preserve">
+				<source>Firmenname</source>
+				<target xml:lang="en">Company Name</target>
+			</trans-unit>
+			<trans-unit id="properties.contact" xml:space="preserve">
+				<source>Kontakt</source>
+				<target xml:lang="en">Contact</target>
+			</trans-unit>
+			<trans-unit id="properties.collectionPrefix" xml:space="preserve">
+				<source>ContentCollection Prefix</source>
+				<target xml:lang="en">ContentCollection Prefix</target>
+			</trans-unit>
+        </body>
+    </file>
+</xliff>
+

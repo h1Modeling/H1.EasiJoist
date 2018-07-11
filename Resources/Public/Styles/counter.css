@@ -1,0 +1,69 @@
+@-webkit-keyframes load { 
+	0% { stroke-dashoffset:0 }
+}
+
+@-moz-keyframes load { 
+	0% { stroke-dashoffset:0 }
+}
+
+@keyframes load { 
+	0% { stroke-dashoffset:0 }
+}
+
+ul.progress {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: center;
+}
+
+.progress>li {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+ 
+.progress svg {
+  width: 10rem;
+  height: 10rem;
+  max-width: 100%;
+}
+
+.progress svg:nth-child(1) {
+	stroke: #fd0;
+  stroke-width: 15;
+}
+ 
+.progress svg:nth-child(2) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+}
+ 
+.progress svg:nth-child(2) path {
+  fill: none;
+  stroke-width: 25;
+  stroke-dasharray: 629;
+  -webkit-animation: load 5s;
+  -moz-animation: load 5s;
+  -o-animation: load 5s;
+  animation: load 5s;
+}
+
+.progressText {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translate(0,-50%);
+}
+
+.progressText strong {
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: normal;
+}

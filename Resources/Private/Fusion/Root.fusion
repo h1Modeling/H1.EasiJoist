@@ -1,0 +1,70 @@
+include: NodeTypes/**/*
+
+/**
+ * Root Fusion for the EasiJoist site
+ */
+
+prototype(H1.EasiJoist:DefaultPage) < prototype(Neos.Neos:Page) {
+    
+    head {
+        stylesheets.site = Neos.Fusion:Template {
+            templatePath = 'resource://H1.EasiJoist/Private/Templates/Page/Default.html'
+            sectionName = 'stylesheets'
+        }
+
+        javascripts.site = Neos.Fusion:Template {
+            templatePath = 'resource://H1.EasiJoist/Private/Templates/Page/Default.html'
+            sectionName = 'headScripts'
+        }
+    }
+
+    body {
+        templatePath = 'resource://H1.EasiJoist/Private/Templates/Page/Default.html'
+        sectionName = 'body'
+        parts {
+
+            menu = Neos.Neos:Menu {
+
+                templatePath = 'resource://H1.EasiJoist/Private/Templates/Menu/MainMenu.html'
+
+                filter = '!H1.EasiJoist:FooterPage,Neos.Neos:Document,!H1.EasiJoist:NewsPage, H1.EasiJoist:HomePage'
+
+                mainSiteTitle = ${q(site).property('title')}
+                
+                mainSiteLink = H1.EasiJoist:SiteLink
+
+                languageMenu = Neos.Neos:DimensionsMenu {
+
+                    templatePath = 'resource://H1.EasiJoist/Private/Templates/Menu/DimensionMenu.html'
+
+                    attributes {
+                        class = 'dropDownMenu noList'
+                    }
+
+                    dimension = 'language'
+                }
+            }
+
+            siteLink = H1.EasiJoist:SiteLink
+
+            logo = Neos.Neos:ImageUri {
+                asset = ${q(site).children('footer').children('[instanceof H1.NodeTypes.WolfSystem:HeaderLogo]').first().property('image')}
+            }
+        }
+
+        javascripts.site = Neos.Fusion:Template {
+            templatePath = 'resource://H1.EasiJoist/Private/Templates/Page/Default.html'
+            sectionName = 'bodyScripts'
+        }
+    }
+}
+
+# Site Link
+prototype(H1.EasiJoist:SiteLink) < prototype(Neos.Fusion:Value) {
+    
+    value = Neos.Neos:NodeUri {
+        node = ${q(node)}
+        baseNodeName = 'site'
+    }
+}
+

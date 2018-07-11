@@ -1,0 +1,13 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+<f:render section="footerList" arguments="{items: items, site: site}" />
+
+<f:section name="footerList">
+	<f:for each="{items}" as="item" iteration="menuItemIterator">
+		<li>
+			<neos:link.node node="{item.node}">
+				<p>{item.label}</p>
+			</neos:link.node>
+		</li>
+	</f:for>
+</f:section>

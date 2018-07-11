@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace fusion=Neos\Fusion\ViewHelpers}
+<html>
+<head>
+	<f:section name="meta">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="cache-control" content="max-age=15768000, public">
+		<link href="{f:uri.resource(path: 'Images/icon.png', package: 'H1.Wolf')}" rel="icon" type="image/png">
+    </f:section>
+
+	<f:section name="stylesheets">
+		<!-- Put your stylesheet inclusions here, they will be included in your website by Fusion>
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/hamburger.css', package: 'H1.Wolf')}" media="all">
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/menu.css', package: 'H1.Wolf')}" media="all">
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/breadcrumb.css', package: 'H1.Wolf')}" media="all">
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/bootstrap-grid.css', package: 'H1.Wolf')}" media="all">
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/swiper.css', package: 'H1.Wolf')}" media="all">
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/wolf.css', package: 'H1.Wolf')}" media="all">
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/plyr.css', package: 'H1.Wolf')}" media="all"-->
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/h1.css', package: 'H1.Wolf')}" media="all">
+	</f:section>
+	<f:section name="headScripts">
+		<!-- Put your scripts inclusions for the head here, they will be included in your website by Fusion -->
+		<!--script src="{f:uri.resource(path: 'JavaScript/swiper.min.js', package: 'H1.Wolf')}"></script>
+		<script src="{f:uri.resource(path: 'JavaScript/wolfStart.js', package: 'H1.Wolf')}"></script-->
+		<script src="{f:uri.resource(path: 'JavaScript/h1_header.js', package: 'H1.Wolf')}"></script>
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	</f:section>
+	<f:section name="googleAnalyticsSystem">
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-21798447-4"></script>
+		<script>
+		    window.dataLayer = window.dataLayer || [];
+		    function gtag(){dataLayer.push(arguments);}
+		    gtag('js', new Date());
+
+		    gtag('config', 'UA-21798447-4');
+		</script>
+	</f:section>
+	<f:section name="googleAnalyticsHaus">
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-21798447-6"></script>
+		<script>
+		    window.dataLayer = window.dataLayer || [];
+		    function gtag(){dataLayer.push(arguments);}
+		    gtag('js', new Date());
+
+		    gtag('config', 'UA-21798447-6');
+		</script>
+	</f:section>
+</head>
+<body>
+<f:section name="body">
+	{content.header -> f:format.raw()}
+	<script>if(getIEVersion() !== 0) {optimiseSVG();}</script>
+
+	<nav class="menu">
+		{parts.menu -> f:format.raw()}
+	</nav>
+	<main>
+		<div id='backgroundFade' class='hidden2'></div>
+		<div class="content">
+			{content.main -> f:format.raw()}
+		</div>
+		{content.backToTop -> f:format.raw()}
+	</main>
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-4">
+					<p class="copyright">
+						{content.copyright}
+					</p>
+				</div>
+				<div class="col-12 col-md-8">
+					<ul class="footer-links">
+						<li>
+							<a href='/#contactForm' id='contactFooter'>
+								<img src="{f:uri.resource(path: 'Images/mailFooter.svg', package: 'H1.Wolf')}" title='icon Mail' alt='icon Mail' class="footer-LinkImage">
+								<p>{site.properties.contact}</p>
+							</a>
+						</li>
+						{content.footerLinks -> f:format.raw()}
+						<li>
+							{content.socialMediaButtons -> f:format.raw()}
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<f:if condition='{node.context.inBackend}'>
+			<f:then>
+				<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/backend.css', package: 'H1.Wolf')}" media="all">
+				<script src="{f:uri.resource(path: 'JavaScript/backend.js', package: 'H1.Wolf')}"></script>
+			</f:then>
+			<f:else>
+				<script>initFrontend();</script>
+			</f:else>
+		</f:if>
+	</footer>
+	<fusion:render path="content.cookie"/>
+</f:section> 
+<f:section name="bodyScripts">
+	<!--script src="{f:uri.resource(path: 'JavaScript/menu.js', package: 'H1.Wolf')}"></script>
+	<script src="{f:uri.resource(path: 'JavaScript/plyr.js', package: 'H1.Wolf')}"></script>
+	<script src="{f:uri.resource(path: 'JavaScript/carouselInit.js', package: 'H1.Wolf')}"></script-->
+	<script src="{f:uri.resource(path: 'JavaScript/h1_footer.js', package: 'H1.Wolf')}"></script>
+</f:section>
+</body>
+</html>

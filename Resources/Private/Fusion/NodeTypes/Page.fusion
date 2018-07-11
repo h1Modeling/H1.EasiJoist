@@ -1,0 +1,87 @@
+prototype(H1.EasiJoist:Page) < prototype(H1.EasiJoist:DefaultPage) {
+    
+    body {
+
+		// These are your content areas, you can define as many as you want, just name them and the nodePath.
+		content {
+
+			icon = true
+
+			// Header
+			header = Neos.Neos:ContentCollection {
+			        nodePath = ${q(site).find('header').property('_path')}
+			        collection = ${q(site).children('header').children()}
+			        attributes = Neos.Fusion:Attributes {
+			        	class='headerArea fixed-top'
+    				}
+			}
+
+			// The default content section
+			main = Neos.Neos:PrimaryContent {
+				nodePath = 'main'
+			}
+
+			// BackToTop Button
+			backToTop = Neos.Fusion:Tag {
+				tagName = 'a'
+				attributes = Neos.Fusion:Attributes {
+					id = 'backToTop'
+					class= 'backToTopButton'
+				}
+			}
+
+			// Header
+			footerImage = Neos.Neos:ContentCollection {
+			        nodePath = ${q(site).find('footer').property('_path')}
+			        collection = ${q(site).children('footer').children('[instanceof H1.NodeTypes.WolfSystem:HeaderLogo]')}
+			}
+
+			// Customer Links
+			customerLinks = Neos.Neos:Menu {
+				templatePath = 'resource://H1.NodeTypes.WolfSystem/Private/Templates/FusionObjects/FooterLinks.html'
+				itemCollection = ${q(site).children('[instanceof H1.EasiJoist:Page]').children('[instanceof H1.EasiJoist:CustomerPage]').get()}
+			}
+
+			// Footer Links
+			footerLinks = Neos.Neos:Menu {
+				templatePath = 'resource://H1.NodeTypes.WolfSystem/Private/Templates/FusionObjects/FooterLinks.html'
+				entryLevel = 1
+				maximumLevels = 3
+				filter = 'H1.EasiJoist:FooterPage'
+				icon = true
+			}
+
+
+			copyright = ${'© ' + Date.year(Date.today()) + ' ' + q(site).property('copyright')}
+
+			
+
+			// Cookie message
+			cookie = Neos.Fusion:Collection {
+				collection = ${q(site).children('footer').children('[instanceof H1.NodeTypes.WolfSystem:CookieMessage]')}
+        		itemRenderer = H1.NodeTypes.WolfSystem:CookieMessage
+			}
+
+			// Social Media Buttons
+			socialMediaButtons = Neos.Fusion:Tag {
+				attributes.class = 'socialMediaButtons'
+				content = Neos.Fusion:Collection {
+					collection = ${q(site).children('footer').children('[instanceof H1.NodeTypes.WolfSystem:SocialMediaButton]')}
+        			itemRenderer = H1.NodeTypes.WolfSystem:SocialMediaButton
+        			@context.test = ${q(site).children('footer').children().get()}
+				}
+			}
+		}
+    }
+}
+
+# Homepage
+prototype(H1.EasiJoist:HomePage) < prototype(H1.EasiJoist:Page)
+
+# Customer
+prototype(H1.EasiJoist:CustomerPage) < prototype(H1.EasiJoist:Page)
+
+# Footer
+prototype(H1.EasiJoist:FooterPage) < prototype(H1.EasiJoist:Page)
+
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace fusion=Neos\Fusion\ViewHelpers}
+<html>
+<head>
+	<f:section name="meta">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="cache-control" content="max-age=15768000, public">
+		<link href="{f:uri.resource(path: 'Images/icon.png', package: 'H1.EasiJoist')}" rel="icon" type="image/png">
+    </f:section>
+	<f:section name="stylesheets">
+		<!-- Put your stylesheet inclusions here, they will be included in your website by Fusion -->
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/hamburger.css', package: 'H1.EasiJoist')}" media="all">
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/menu.css', package: 'H1.EasiJoist')}" media="all">
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/breadcrumb.css', package: 'H1.EasiJoist')}" media="all">
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/bootstrap-grid.css', package: 'H1.EasiJoist')}" media="all">
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/swiper.css', package: 'H1.EasiJoist')}" media="all">
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/easiJoist.css', package: 'H1.EasiJoist')}" media="all">
+		<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/plyr.css', package: 'H1.EasiJoist')}" media="all">
+	</f:section>
+	<f:section name="headScripts">
+		<!-- Put your scripts inclusions for the head here, they will be included in your website by Fusion -->
+	</f:section>
+</head>
+<body>
+<f:section name="body">
+	{content.header -> f:format.raw()}
+	<nav class="menu">
+		{parts.menu -> f:format.raw()}
+		{parts.languageMenu -> f:format.raw()}
+	</nav>
+	<main>
+		<div class="content">
+			{content.main -> f:format.raw()}
+		</div>
+		{content.backToTop -> f:format.raw()}
+	</main>
+	<footer class="footer">
+		<div class="footer-div">
+			<div class="container">
+				<div class="row">
+					<!--div class="col-md-2">
+						<f:if condition='{node.context.inBackend}'>
+							<f:then>
+								{content.footerImage -> f:format.raw()}
+							</f:then>
+							<f:else>
+								<a href="{parts.siteLink}">
+									{content.footerImage -> f:format.raw()}
+								</a>
+							</f:else>
+						</f:if>
+					</div-->
+					<div class="col-md-12">
+						<ul class="footerLinks text-center linksBigger">
+							{content.customerLinks -> f:format.raw()}
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<ul class="footerLinks text-center">
+							<li>
+								<p class="copyright">
+									{content.copyright}
+								</p>
+							</li>
+							{content.footerLinks -> f:format.raw()}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<f:if condition='{node.context.inBackend}'>
+			<f:then>
+				<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/backend.css', package: 'H1.Wolf')}" media="all">
+				<script src="{f:uri.resource(path: 'JavaScript/backend.js', package: 'H1.Wolf')}"></script>
+			</f:then>
+			<f:else>
+				<script>initFrontend();</script>
+			</f:else>
+		</f:if>
+	</footer>
+</f:section>
+<f:section name="bodyScripts">
+	<!-- Put your scripts inclusions for the end of the body here, they will be included in your website by Fusion -->
+</f:section>
+</body>
+</html>

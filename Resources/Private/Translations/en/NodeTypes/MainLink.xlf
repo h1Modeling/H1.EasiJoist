@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="H1.Wolf" source-language="de" datatype="plaintext" target-language="en">
+        <body>
+			<trans-unit id="ui.label" xml:space="preserve">
+				<source>Shortcut</source>
+				<target xml:lang="en">Shortcut</target>
+			</trans-unit>
+			<trans-unit id="properties.highlight" xml:space="preserve">
+				<source>In Menü hervorheben</source>
+				<target xml:lang="en">Highlight in Menu</target>
+			</trans-unit>
+			<trans-unit id="properties.newWindow" xml:space="preserve">
+				<source>In neuem Fenster öffnen</source>
+				<target xml:lang="en">Open in new Tab</target>
+			</trans-unit>
+			<trans-unit id="properties.anchor" xml:space="preserve">
+				<source>Anker</source>
+				<target xml:lang="en">Anchor</target>
+			</trans-unit>
+        </body>
+    </file>
+</xliff>
+

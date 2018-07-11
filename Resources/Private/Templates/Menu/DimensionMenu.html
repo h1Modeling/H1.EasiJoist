@@ -1,0 +1,39 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace fusion=Neos\Fusion\ViewHelpers}
+<f:for each="{items}" as="item">
+	<f:if condition="{item.state} == 'current'">
+		<a class="mainMenuItem bigPadding">{item.label}</a>
+	</f:if>
+</f:for>
+<div class='dropDownContainer'>
+	<div class='dropDownContainer2'>
+		<ul{attributes -> f:format.raw()}>
+		<f:for each="{items}" as="item">
+			<f:if condition="{item.state} !== 'absent'">
+				<li{fusion:render(path: '{item.state}.attributes', context: {item: item}) -> f:format.raw()}>
+				<f:if condition="{item.node}">
+					<f:then>
+						<neos:link.node node="{item.node}" class='dropDownItem'>
+							<h4>
+								<f:render section="itemLabel" arguments="{item:item}"/>
+							</h4>
+						</neos:link.node>
+					</f:then>
+					<f:else>
+						<h4 class='gray'>
+							<f:render section="itemLabel" arguments="{item:item}"/>
+						</h4>
+					</f:else>
+				</f:if>
+				</li>
+			</f:if>
+		</f:for>
+		</ul>
+	</div>
+</div>
+<img class="arrowBigMenu" src="{f:uri.resource(path: 'Images/arrowDown.svg', package: 'H1.EasiJoist')}" alt="Pfeil Icon"/>
+
+<f:section name="itemLabel">
+	{item.label}
+</f:section>
+

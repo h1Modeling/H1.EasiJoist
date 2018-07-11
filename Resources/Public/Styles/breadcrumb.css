@@ -1,0 +1,18 @@
+
+.breadcrumb a {
+	font-weight: bold;
+}
+
+.breadcrumb a:hover {
+	color: black;
+}
+
+.breadcrumb a:after {
+	content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1LjgxIiBoZWlnaHQ9IjkuNSIgdmlld0JveD0iMCAwIDUuODEgOS41Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjtzdHJva2U6IzJkMmQyZDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLXdpZHRoOjEuNXB4O308L3N0eWxlPjwvZGVmcz48cG9seWxpbmUgY2xhc3M9ImNscy0xIiBwb2ludHM9IjAuNzUgMC43NSA1LjA2IDQuNzUgMC43NSA4Ljc1Ii8+PC9zdmc+");
+	padding-left: 14px;
+	padding-right: 12px;
+}
+
+.breadcrumb span {
+	font-size: 15px;
+}

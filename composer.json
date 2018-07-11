@@ -1,0 +1,22 @@
+{
+    "description": "EasiJoist Homepage",
+    "type": "neos-site",
+    "require": {
+        "neos/neos": "*",
+        "neos/nodetypes": "*"
+    },
+    "suggest": {
+        "neos/seo": "*"
+    },
+    "name": "h1/easijoist",
+    "autoload": {
+        "psr-4": {
+            "H1\\EasiJoist\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "H1.EasiJoist"
+        }
+    }
+}

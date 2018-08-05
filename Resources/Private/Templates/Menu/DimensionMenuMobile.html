@@ -1,0 +1,38 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace fusion=Neos\Fusion\ViewHelpers}
+<f:for each="{items}" as="item">
+	<f:if condition="{item.state} == 'current'">
+		<li class="{item.state} listItem" id='{item.label} {item.node.nodeType.name}'>
+			<div class="nav listItemContent">
+				<div class="menuItem">
+					<a>{item.label}</a>
+				</div>
+				<input type="checkbox" class="styled-checkbox"/>
+				<img class="arrow" src="{f:uri.resource(path: 'Images/arrowDown.svg', package: 'H1.EasiJoist')}" alt="Pfeil Icon"/>
+				<ul class="menuListSecond">
+					<f:for each="{items}" as="item" iteration="mobileMenuItemIterator">
+						<f:if condition="{item.state} !== 'absent'">
+							<f:then>
+								<li class="{item.state} listItem">
+									<div class="listItemContent">
+										<div class='menuItem menuItemSecond'>
+										<neos:link.node node="{item.node}" section='{item.node.properties.anchor}' class="fontRegular">
+											<f:render section="itemLabel" arguments="{item:item}"/>
+										</neos:link.node>
+									</div>
+								</li>
+							</f:then>
+							<f:else>
+							</f:else>	
+						</f:if>
+					</f:for>
+				</ul>
+			</div>
+		</li>
+	</f:if>
+</f:for>
+
+<f:section name="itemLabel">
+	{item.label}
+</f:section>
+

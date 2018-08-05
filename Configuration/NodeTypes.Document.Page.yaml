@@ -42,6 +42,7 @@
           'H1.NodeTypes.WolfSystem:SocialMediaButton': true
           'H1.NodeTypes.WolfSystem:CookieMessage': true
           'H1.NodeTypes.WolfSystem:HeaderLogo': true
+      position: 'after main'
   properties:
     copyright:
       type: string

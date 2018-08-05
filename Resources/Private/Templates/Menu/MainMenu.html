@@ -1,7 +1,7 @@
 {namespace neos=Neos\Neos\ViewHelpers}
 {namespace media=Neos\Media\ViewHelpers}
 
-<f:render section="itemList" arguments="{items: items, site: site, languageMenu: languageMenu, mainSiteTitle: mainSiteTitle, mainSiteLink: mainSiteLink}" />
+<f:render section="itemList" arguments="{items: items, site: site, languageMenu: languageMenu, mainSiteTitle: mainSiteTitle, mainSiteLink: mainSiteLink, languageMenuMobile: languageMenuMobile}" />
 
 <f:section name="itemList">
     <!-- Hauptmenü -->
@@ -47,6 +47,13 @@
 		<div>
 			<!-- Sonstiges -->
 			<ul class='mobileMenu'>
+				<li class="listItem">
+					<div class="nav listItemContent">
+						<div class="menuItem">
+							<a href="{mainSiteLink}">{mainSiteTitle}</a>
+						</div>
+					</div>
+				</li>
 				<f:for each="{items}" as="item" iteration="mobileMenuItemIterator">
 					<li class="{item.state} listItem" id='{item.label} {item.node.nodeType.name}'>
 						<div class="nav listItemContent">
@@ -71,6 +78,7 @@
 						</div>
 					</li>
 				</f:for>
+				{languageMenuMobile -> f:format.raw()}
 			</ul>
 		 </div>
 	</div>

@@ -95,6 +95,10 @@ section.removePaddingBottom {
     padding-right: 0 !important;
 }
 
+.textAlignCenter {
+    text-align: center;
+}
+
 .kachelText a::before {
     content: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJFYmVuZV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDEzIDEzIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMyAxMzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBvbHlsaW5lIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNBREFGQjI7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwOyIgcG9pbnRzPSINCgk2LjcsMS45IDExLjUsNi41IDExLjUsNi41IDYuNywxMS4yICIvPg0KPHBvbHlsaW5lIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNBREFGQjI7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwOyIgcG9pbnRzPSINCgkyLjEsMS45IDYuOSw2LjUgNi45LDYuNSAyLjEsMTEuMiAiLz4NCjwvc3ZnPg==");
     width: 10px;
@@ -688,12 +692,22 @@ img.sliderArrow {
     height: 100%;
 }
 
-.iconLink {
+.iconLink a {
     padding-left: 20px;
+    background: #FFDD00;
+    color: #58595B;
+    padding: 8px 30px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    user-select: none;
 }
 
-.iconLink a {
-    position: relative;
+.iconLink a:hover {
+    color: #58595B;
+    background-color: #F4D600;
+    border-color: #adadad;
 }
 
 .linkSymbol a {
@@ -703,15 +717,6 @@ img.sliderArrow {
 }
 
 .linkSymbol a::before {
-    content: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJFYmVuZV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDEzIDEzIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMyAxMzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBvbHlsaW5lIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNBREFGQjI7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwOyIgcG9pbnRzPSINCgk2LjcsMS45IDExLjUsNi41IDExLjUsNi41IDYuNywxMS4yICIvPg0KPHBvbHlsaW5lIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNBREFGQjI7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwOyIgcG9pbnRzPSINCgkyLjEsMS45IDYuOSw2LjUgNi45LDYuNSAyLjEsMTEuMiAiLz4NCjwvc3ZnPg==");
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    position: absolute;
-    left: -20px;
-}
-
-.iconLink a::before {
     content: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJFYmVuZV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDEzIDEzIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMyAxMzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBvbHlsaW5lIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNBREFGQjI7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwOyIgcG9pbnRzPSINCgk2LjcsMS45IDExLjUsNi41IDExLjUsNi41IDYuNywxMS4yICIvPg0KPHBvbHlsaW5lIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNBREFGQjI7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwOyIgcG9pbnRzPSINCgkyLjEsMS45IDYuOSw2LjUgNi45LDYuNSAyLjEsMTEuMiAiLz4NCjwvc3ZnPg==");
     width: 10px;
     height: 10px;
@@ -1619,6 +1624,38 @@ div.neos-nodetypes-text ul, div.neos-nodetypes-text div ul {
     font-size: 16px;
 }
 
+.quoteImage {
+    border: 10px solid rgb(240,240,240);
+    border-radius: 50%;
+    max-width: 250px;
+    max-height: 250px;
+    margin-bottom: 30px;
+}
+
+.quoteArrow {
+    border: solid 20px white;
+    width: 0;
+    height: 0;
+    border-bottom: solid 20px rgb(240,240,240);
+    position: absolute;
+    left: calc(50% - 25px);
+    top: -20px;
+    border-top-width: 0px;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    transform: rotate(0deg);
+}
+
+.quoteText {
+    background: rgb(240,240,240);
+    min-height: 150px;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
 /*
 @media (min-width: 576px) {
 
@@ -1680,6 +1717,24 @@ div.neos-nodetypes-text ul, div.neos-nodetypes-text div ul {
         padding-right: 20px;
         padding-left: 20px;
         max-width: 680px;
+    }
+
+    .quoteImage {
+        margin-bottom: 0px;
+    }
+
+    .quoteArrow {
+        left: 25px;
+        top: calc(50% - 25px);
+        border-top-width: 20px;
+        border-left-width: 0;
+        border-top-color: transparent;
+        border-right-color: rgb(240,240,240);
+        border-bottom-color: transparent;
+    }
+
+    .quoteText {
+        margin-left: 30px;
     }
 }
 

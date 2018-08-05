@@ -7,6 +7,14 @@ include: NodeTypes/**/*
 prototype(H1.EasiJoist:DefaultPage) < prototype(Neos.Neos:Page) {
     
     head {
+
+        meta = Neos.Fusion:Template {
+            templatePath = 'resource://H1.Wolf/Private/Templates/Page/Default.html'
+            sectionName = 'meta'
+
+            title = ${q(node).property('title')}
+        }
+
         stylesheets.site = Neos.Fusion:Template {
             templatePath = 'resource://H1.EasiJoist/Private/Templates/Page/Default.html'
             sectionName = 'stylesheets'
@@ -43,12 +51,29 @@ prototype(H1.EasiJoist:DefaultPage) < prototype(Neos.Neos:Page) {
 
                     dimension = 'language'
                 }
+
+                languageMenuMobile = Neos.Neos:DimensionsMenu {
+
+                    templatePath = 'resource://H1.EasiJoist/Private/Templates/Menu/DimensionMenuMobile.html'
+
+                    attributes {
+                        class = 'dropDownMenu noList'
+                    }
+
+                    dimension = 'language'
+                }
             }
 
             siteLink = H1.EasiJoist:SiteLink
 
             logo = Neos.Neos:ImageUri {
                 asset = ${q(site).children('footer').children('[instanceof H1.NodeTypes.WolfSystem:HeaderLogo]').first().property('image')}
+            }
+
+            // Cookie message
+            cookie = Neos.Fusion:Collection {
+                collection = ${q(site).children('footer').children('[instanceof H1.NodeTypes.WolfSystem:CookieMessage]')}
+                itemRenderer = H1.NodeTypes.WolfSystem:CookieMessage
             }
         }
 

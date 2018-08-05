@@ -8,12 +8,9 @@ prototype(H1.EasiJoist:Page) < prototype(H1.EasiJoist:DefaultPage) {
 			icon = true
 
 			// Header
-			header = Neos.Neos:ContentCollection {
+			icon = Neos.Neos:ContentCollection {
 			        nodePath = ${q(site).find('header').property('_path')}
-			        collection = ${q(site).children('header').children()}
-			        attributes = Neos.Fusion:Attributes {
-			        	class='headerArea fixed-top'
-    				}
+			        collection = ${q(site).children('header').children('[instanceof H1.NodeTypes.WolfSystem:HeaderLogo]')}
 			}
 
 			// The default content section

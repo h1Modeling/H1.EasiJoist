@@ -22,11 +22,25 @@
 	</f:section>
 	<f:section name="headScripts">
 		<!-- Put your scripts inclusions for the head here, they will be included in your website by Fusion -->
+		<script src="{f:uri.resource(path: 'JavaScript/swiper.min.js', package: 'H1.EasiJoist')}"></script>
+		<script src="{f:uri.resource(path: 'JavaScript/wolfStart.js', package: 'H1.EasiJoist')}"></script>
+		<!--script src="{f:uri.resource(path: 'JavaScript/h1_header.js', package: 'H1.EasiJoist')}"></script-->
 	</f:section>
 </head>
 <body>
 <f:section name="body">
-	{content.header -> f:format.raw()}
+	<div class="headerArea fixed-top">
+		{content.icon -> f:format.raw()}
+		<div class="container">
+			<div class="contactHeader">
+				<button id="menuButton" class="hamburger hamburger--squeeze" type="button">
+					<span class="hamburger-box"></span>
+					<span class="hamburger-inner"></span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<script>if(getIEVersion() !== 0) {optimiseSVG();}</script>
 	<nav class="menu">
 		{parts.menu -> f:format.raw()}
 		{parts.languageMenu -> f:format.raw()}
@@ -75,17 +89,21 @@
 		</div>
 		<f:if condition='{node.context.inBackend}'>
 			<f:then>
-				<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/backend.css', package: 'H1.Wolf')}" media="all">
-				<script src="{f:uri.resource(path: 'JavaScript/backend.js', package: 'H1.Wolf')}"></script>
+				<link rel="stylesheet" href="{f:uri.resource(path: 'Styles/backend.css', package: 'H1.EasiJoist')}" media="all">
+				<script src="{f:uri.resource(path: 'JavaScript/backend.js', package: 'H1.EasiJoist')}"></script>
 			</f:then>
 			<f:else>
 				<script>initFrontend();</script>
 			</f:else>
 		</f:if>
 	</footer>
+	<fusion:render path="content.cookie"/>
 </f:section>
 <f:section name="bodyScripts">
-	<!-- Put your scripts inclusions for the end of the body here, they will be included in your website by Fusion -->
+	<script src="{f:uri.resource(path: 'JavaScript/menu.js', package: 'H1.EasiJoist')}"></script>
+	<script src="{f:uri.resource(path: 'JavaScript/plyr.js', package: 'H1.EasiJoist')}"></script>
+	<script src="{f:uri.resource(path: 'JavaScript/carouselInit.js', package: 'H1.EasiJoist')}"></script>
+	<!--script src="{f:uri.resource(path: 'JavaScript/h1_footer.js', package: 'H1.Wolf')}"></script-->
 </f:section>
 </body>
 </html>

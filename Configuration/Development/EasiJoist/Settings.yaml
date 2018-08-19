@@ -21,8 +21,6 @@ Neos:
             uriSegment: 'fr'
   Neos:
     userInterface:
-      backendLoginForm:
-        backgroundImage: 'resource://H1.EasiJoist/Public/Images/start.png'
       navigateComponent:
         nodeTree:
           loadingDepth: 1

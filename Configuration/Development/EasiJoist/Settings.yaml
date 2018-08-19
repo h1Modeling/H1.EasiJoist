@@ -22,7 +22,7 @@ Neos:
   Neos:
     userInterface:
       backendLoginForm:
-        backgroundImage: 'resource://H1.Wolf/Public/Images/Osterhofen.jpg'
+        backgroundImage: 'resource://H1.EasiJoist/Public/Images/start.png'
       navigateComponent:
         nodeTree:
           loadingDepth: 1
@@ -73,6 +73,9 @@ Neos:
           collapsed: true
           label: 'News / Messen'
           icon: 'newspaper-o'
+    Ui:
+      frontendConfiguration:
+        defaultInlineEditor: 'ckeditor5'
   Media:
     thumbnailPresets:
       'presetLg':
